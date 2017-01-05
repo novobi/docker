@@ -8,6 +8,7 @@ set -e
 : ${PORT:=${DB_PORT_5432_TCP_PORT:=5432}}
 : ${USER:=${DB_ENV_POSTGRES_USER:=${POSTGRES_USER:='odoo'}}}
 : ${PASSWORD:=${DB_ENV_POSTGRES_PASSWORD:=${POSTGRES_PASSWORD:='odoo'}}}
+: ${ODOO_PORT:=${ODOO_PORT_8069:=8069}}
 
 DB_ARGS=()
 function check_config() {
@@ -22,6 +23,7 @@ check_config "db_host" "$HOST"
 check_config "db_port" "$PORT"
 check_config "db_user" "$USER"
 check_config "db_password" "$PASSWORD"
+check_config "xmlrpc-port" "$ODOO_PORT"
 
 case "$1" in
     -- | odoo)

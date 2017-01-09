@@ -15,4 +15,4 @@ Docker run:
 
 `docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo --name db postgres:9.4`
 
-`docker run -p 8090:8090 -e ODOO_PORT=8095 --name odoo --link db:db -t novobi:odoo10`
+`docker run -p 8095:8095 -e ODOO_PORT=8095 --name odoo --link db:db -t novobi:odoo10`
